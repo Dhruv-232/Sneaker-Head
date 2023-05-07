@@ -16,7 +16,10 @@ const UserSchema = new mongoose.Schema({
         required: true,
         min: 6,
     },
-    
-}, )
+    profileImg:{
+        type: String,
+        required: true
+    }
+}, {timestamps: true})
 
 module.exports = mongoose.model("User", UserSchema)
