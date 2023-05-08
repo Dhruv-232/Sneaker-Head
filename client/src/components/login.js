@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 
 function Login() {
-    const Navigate = useNavigate()
+    const navigate = useNavigate()
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const handleLogin = () => {
@@ -15,7 +15,8 @@ function Login() {
             .then((res) => {
                 console.log(res.data.token,17)
                 if (res.data.token) {
-                    Navigate('/home') 
+                    localStorage.setItem('token', res.data.token)
+                    navigate('/home') 
                 }
                 
             })
