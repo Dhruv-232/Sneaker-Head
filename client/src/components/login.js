@@ -3,8 +3,17 @@ import { Link } from "react-router-dom"
 function Login() {
     return (
         <div>
-            login page
-            <Link to= "/home">GO TO HOME</Link>
+            <h1> LOGIN PAGE </h1>
+            USERNAME -
+            <input type = "text"/>
+            <br />
+            <br />
+            PASSWORD - 
+            <input type = "text"/>
+            <br />
+            <br />
+            <button> SUBMIT </button>
+            
         </div>
     )
 }
