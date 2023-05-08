@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
+// JWT successful
 function Home() {
     const navigate = useNavigate()
 
@@ -9,6 +10,7 @@ function Home() {
             navigate('/login')
         }
     }, [])
+    // 
     return(
         <div>
             home
