@@ -12,6 +12,10 @@ function Home() {
     return(
         <div>
             home
+            <button onClick={()=>{
+                localStorage.clear()
+                navigate('/login')
+            }}>LOGOUT</button>
         </div>
     )
 }
