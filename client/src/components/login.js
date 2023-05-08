@@ -1,12 +1,27 @@
 import {useState} from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 function Login() {
-
+    const Navigate = useNavigate()
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const handleLogin = () => {
+        
         console.log(userName, password)
+        
+        const data = { email: userName , password: password }
+        axios.post('https://reqres.in/api/login', data)
+            .then((res) => {
+                console.log(res.data.token,17)
+                if (res.data.token) {
+                    Navigate('/home') 
+                }
+                
+            })
+            .catch((err) => {
+                console.log(err, 20)
+            })
     }
     return (
         <div>
